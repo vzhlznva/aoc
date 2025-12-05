@@ -21,7 +21,7 @@
         ],
         "jsx": "preserve",
         "jsxImportSource": "vue",
-        "types": [],
+        "types": ["node"],
         "moduleResolution": "Bundler",
         "useDefineForClassFields": true,
         "noImplicitThis": true,

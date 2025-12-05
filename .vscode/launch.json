@@ -1,20 +1,24 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "ts-node",
-            "type": "node",
-            "request": "launch",
-            "args": [
-                "${relativeFile}"
-            ],
-            "runtimeArgs": [
-                "-r",
-                "ts-node/register"
-            ],
-            "cwd": "${workspaceRoot}",
-            "protocol": "inspector",
-            "internalConsoleOptions": "openOnSessionStart"
-        },
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run current TS file",
+      "type": "node",
+      "request": "launch",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "runtimeArgs": [
+        "--loader",
+        "ts-node/esm"
+      ],
+      "env": {
+        "TS_NODE_PROJECT": "${workspaceFolder}/tsconfig.json"
+      },
+      "sourceMaps": true,
+      "protocol": "inspector",
+      "outFiles": [
+        "${workspaceFolder}/**/*.ts"
+      ]
+    }
+  ]
 }
